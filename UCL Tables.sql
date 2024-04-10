@@ -107,3 +107,39 @@ VALUES
 ('Mykhaylo Mudryk', 'Shakhtar Donetsk', 'Ukraine', 3, 2, 5),
 ('Jude Bellingham', 'Borussia Dortmund', 'England', 4, 1, 5),
 ('Serge Gnabry', 'Bayern Munchen', 'Germany', 2, 3, 5);
+
+--KNOCKOUT_STAGE_GAMES-------------------------------------------------------------------------------------------
+
+--Code to create knockout games table
+
+CREATE TABLE ucl_knockouts(
+	Knockout_Stage VARCHAR(100) NOT NULL,
+	Team_1 VARCHAR(100),
+	Team_2 VARCHAR(100),
+	Game_1_Team_1_Score INT,
+	Game_1_Team_2_Score INT,
+	Game_2_Team_1_Score INT,
+	Game_2_Team_2_Score INT,
+	Aggregate_Team_1_Score INT,
+	Aggregate_Team_2_Score INT,
+	Winner VARCHAR(100)
+);
+	
+--Code to insert data for all knockout games from Round of 16 until Final
+INSERT INTO ucl_knockouts (Knockout_Stage, Team_1, Team_2, Game_1_Team_1_Score, Game_1_Team_2_Score, Game_2_Team_1_Score, Game_2_Team_2_Score, Aggregate_Team_1_Score, Aggregate_Team_2_Score, Winner)
+VALUES
+('Round of 16', 'Liverpool', 'Real Madrid', 2, 5, 0, 1, 2, 6, 'Real Madrid'),
+('Round of 16', 'Borussia Dortmund', 'Chelsea', 1, 0, 0, 2, 1, 2, 'Chelsea'),
+('Round of 16', 'RB Leipzig', 'Manchester City', 1, 1, 0, 7, 1, 8, 'Manchester City'),
+('Round of 16', 'PSG', 'Bayern Munchen', 0, 1, 0, 2, 0, 3, 'Bayern Munchen'),
+('Round of 16', 'AC Milan', 'Tottenham Spurs', 1, 0, 0, 0, 1, 0, 'AC Milan'),
+('Round of 16', 'Frankfurt', 'Napoli', 0, 2, 0, 3, 0, 5, 'Napoli'),
+('Round of 16', 'Club Brugge', 'Benfica', 0, 2, 1, 5, 1, 7, 'Benfica'),
+('Round of 16', 'Inter Milan', 'FC Porto', 1, 0, 0, 0, 1, 0, 'Inter Milan'),
+('Quarter Finals', 'Real Madrid', 'Chelsea', 2, 0, 2, 0, 4, 0, 'Real Madrid'),
+('Quarter Finals', 'Manchester City', 'Bayern Munchen', 3, 0, 1, 1, 4, 1, 'Manchester City'),
+('Quarter Finals', 'AC Milan', 'Napoli', 1, 0, 1, 1, 2, 1, 'AC Milan'),
+('Quarter Finals', 'Benfica', 'Inter Milan', 0, 2, 3, 3, 3, 5, 'Inter Milan'),
+('Semifinals', 'Real Madrid', 'Manchester City', 1, 1, 0, 4, 1, 5, 'Manchester City'),
+('Semifinals', 'AC Milan', 'Inter Milan', 0, 2, 0, 1, 0, 3, 'Inter Milan'),
+('Final', 'Manchester City', 'Inter Milan', 1, 0, NULL, NULL, 1, 0, 'Manchester City');
