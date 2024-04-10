@@ -1,3 +1,5 @@
-This dataset was written entirely on mySQL utilizing existing data from the UEFA Champions League of 2023. 
-It currently contains all 32 teams that played in the competition and some historical data, as well as the MVPs of the tournament.
-It will later contain the SQL code used to create all knockout stage matches, with various data points for each match.
+This dataset was written entirely on mySQL utilizing existing data from the UEFA Champions League of 2023. It contains 3 tables:
+The first table contains all 32 teams that competed in the tournament, along with some historical data, such as number of UCL titles.
+The second table states all the tournament MVP's who contained a G/A (Goals + Assists) of at least 5.
+The third table contains all knockout games played in the tournament, stating the team names, the amount of goals scored in each game, and the winner of the stage.
+
